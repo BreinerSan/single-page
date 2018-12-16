@@ -19,4 +19,8 @@ Route::get('/', 'WebController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('home');
+
+//Admin
+
+Route::resource('admin/galeria', 'admin\ImagesController');

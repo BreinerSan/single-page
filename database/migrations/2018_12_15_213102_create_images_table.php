@@ -15,6 +15,10 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('ima_name');
+            $table->enum('ima_estado', ['ACTIVO', 'INACTIVO'])->default('ACTIVO');
+
             $table->timestamps();
         });
     }

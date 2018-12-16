@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Image;
+
 class ImagesController extends Controller
 {
     /**
@@ -14,7 +16,9 @@ class ImagesController extends Controller
      */
     public function index()
     {
-        //
+        $images = Image::all();
+
+        return view('admin.galeria.index');
     }
 
     /**
