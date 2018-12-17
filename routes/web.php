@@ -26,3 +26,9 @@ Route::get('/admin', 'HomeController@index')->name('home');
 Route::resource('admin/galeria', 'admin\ImagesController');
 Route::resource('admin/info', 'admin\WebinfoController');
 Route::resource('admin/nosotros', 'admin\InfoNosotrosController');
+
+//Route::get('contactus', 'ContactUSController@contactUS');
+Route::post('contactus', 'ContactUSController@contactUSPost')->name('contactus.store');
+
+Route::get('admin/mensajes', 'ContactUSController@index')->middleware('auth');;
+Route::get('admin/mensajes/{id}', 'ContactUSController@show')->name('mensajes.show')->middleware('auth');;

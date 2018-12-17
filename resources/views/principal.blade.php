@@ -5,12 +5,7 @@
 	<!-- Main Carousel Section -->
   	<div id="carousel-area">
        	<div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
-	        <ol class="carousel-indicators">
-	            <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
-	            <li data-target="#carousel-slider" data-slide-to="1"></li>
-	            <li data-target="#carousel-slider" data-slide-to="2"></li>
-	            <li data-target="#carousel-slider" data-slide-to="3"></li>
-	        </ol>
+	        
           	<div class="carousel-inner" role="listbox">
 
 	            <div class="carousel-item active">
@@ -24,14 +19,7 @@
             	</div>
 	            
           	</div>
-        	<a class="carousel-control-prev" href="#carousel-slider" role="button" data-slide="prev">
-            	<span class="carousel-control" aria-hidden="true"><i class="lni-chevron-left"></i></span>
-            	<span class="sr-only">Previous</span>
-       	 	</a>
-         	<a class="carousel-control-next" href="#carousel-slider" role="button" data-slide="next">
-            	<span class="carousel-control" aria-hidden="true"><i class="lni-chevron-right"></i></span>
-            	<span class="sr-only">Next</span>
-         	</a>
+        	
         </div>
   	</div>  
 
@@ -165,33 +153,34 @@
             <div class="row">          
               <div class="col-lg-9 col-md-9 col-xs-12">
                 <div class="contact-block">
-                  <form id="contactForm">
+                  <form id="contactForm" action="{{ route('contactus.store') }}" method="POST">
+                    @csrf
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Por favor escribe tu nombre">
                           <div class="help-block with-errors"></div>
                         </div>                                 
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+                          <input type="email" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Por favor escribe tu correo electronico">
                           <div class="help-block with-errors"></div>
                         </div> 
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <input type="text" placeholder="Subject" id="msg_subject" class="form-control" required data-error="Please enter your subject">
+                          <input type="text" placeholder="Subject" id="msg_subject" name="subject" class="form-control" required data-error="Por favor escribe el asunto">
                           <div class="help-block with-errors"></div>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group"> 
-                          <textarea class="form-control" id="message" placeholder="Your Message" rows="7" data-error="Write your message" required></textarea>
+                          <textarea class="form-control" id="message" name="message" placeholder="Your Message" rows="7" data-error="Escribe tu mensaje" required></textarea>
                           <div class="help-block with-errors"></div>
                         </div>
                         <div class="submit-button">
-                          <button class="btn btn-common btn-effect" id="submit" type="submit">Send Message</button>
+                          <button class="btn btn-common btn-effect" id="submit" type="submit">Enviar Mensaje</button>
                           <div id="msgSubmit" class="h3 hidden"></div> 
                           <div class="clearfix"></div> 
                         </div>

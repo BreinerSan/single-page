@@ -15,14 +15,20 @@
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="{{ url('admin/galeria') }}">
-					<span data-feather="shopping-cart"></span>
+					<span data-feather="image"></span>
 					Gestion de Galeria
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="{{ url('admin/nosotros') }}">
-					<span data-feather="users"></span>
+					<span data-feather="bookmark"></span>
 					Gestion datos Nosotros
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url('admin/mensajes') }}">
+					<span data-feather="inbox"></span>
+					Buzon de mensajes
 				</a>
 			</li>
 			
