@@ -59,73 +59,7 @@
 
     @yield('galeria')
 
-    <!-- Services Section Start -->
-    <section id="services" class="section">
-      	<div class="container">
-	        <div class="section-header">          
-	          <h2 class="section-title">Sobre Nosotros</h2>
-	          <span>Nosotros</span>
-	          <p class="section-subtitle"></p>
-	        </div>
-	        <div class="row">
-	          <div class="col-lg-4 col-md-6 col-xs-12">
-	            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.2s">
-	              <div class="icon color-1">
-	                <i class="lni-pencil"></i>
-	              </div>
-	              <h4></h4>
-	              <p>Organismo privado sin ánimo de lucro, de carácter no gubernamental, la cual se constituye con el fin de mejorar las condiciones y la calidad de vida de los habitantes de Ocaña y su región.</p>
-	            </div>
-	          </div>
-	          <div class="col-lg-4 col-md-6 col-xs-12">
-	            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.4s">
-	              <div class="icon color-2">
-	                <i class="lni-cog"></i>
-	              </div>
-	              <h4></h4>
-	              <p>estimulando un desarrollo económico y social a través de la formulación y ejecución de proyectos de tipo cultural, recreativo, Tecnológico, deportivo, agropecuario, ambiental, educativo, en salud y social.</p>
-	            </div>
-	          </div>
-	          <div class="col-lg-4 col-md-6 col-xs-12">
-	            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.6s">
-	              <div class="icon color-3">
-	                <i class="lni-stats-up"></i>
-	              </div>
-	              <h4></h4>
-	              <p>Capital Humano es una asociación inscrita en cámara de comercio el 26 de marzo de 2004 bajo el número 1044 del libro I, de personas jurídicas sin ánimo de lucro, obteniendo la personería jurídica No 1044 del 6 de abril del 2004, con NIT. No 807009223-4, siendo importante destacar que cada uno de sus miembros</p>
-	            </div>
-	          </div>
-	          <div class="col-lg-4 col-md-6 col-xs-12">
-	            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.8s">
-	              <div class="icon color-4">
-	                <i class="lni-layers"></i>
-	              </div>
-	              <h4></h4>
-	              <p>cuenta con amplia experiencia en sus perfiles profesionales, liderazgo comunitario y ejecución de proyectos encaminados al mejoramiento del bienestar social de las comunidades menos favorecidas tanto del sector rural como urbano de la región.</p>
-	            </div>
-	          </div>
-	          <div class="col-lg-4 col-md-6 col-xs-12">
-	            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="1s">
-	              <div class="icon color-5">
-	                <i class="lni-tab"></i>
-	              </div>
-	              <h4></h4>
-	              <p>La Asociación para el  Desarrollo de Ocaña y su Región “CAPITAL HUMANO”, cuenta con los organismos administrativos y contables que se requieren para su correcto funcionamiento; </p>
-	            </div>
-	          </div>
-	          <div class="col-lg-4 col-md-6 col-xs-12">
-	            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="1.2s">
-	              <div class="icon color-6">
-	                <i class="lni-briefcase"></i>
-	              </div>
-	              <h4></h4>
-	              <p>Dentro del grupo de asociados se cuentan con profesionales en las carreras de Ingeniería de Sistemas, Administración de Empresas, Tecnología Agropecuaria y Zootecnía, Ingeniería Ambiental, Contaduría, los cuales fortalecen la organización y cuentan con herramientas y experiencia que permite la gestión, el desarrollo y la ejecución de proyectos de relevancia para la región  y el país en general.</p>
-	            </div>
-	          </div>
-	        </div>
-      	</div>
-    </section>
-    <!-- Services Section End -->
+    @yield('nosotros1')
 
     @yield('nosotros')
 

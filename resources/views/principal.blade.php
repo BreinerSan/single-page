@@ -76,6 +76,37 @@
     <!-- Portfolio Section Ends --> 
 @endsection
 
+
+@section('nosotros1')
+  <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+          <div class="section-header">          
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <span>Nosotros</span>
+            <p class="section-subtitle"></p>
+          </div>
+          <div class="row">
+            @foreach($cards as $card)
+
+              <div class="col-lg-4 col-md-6 col-xs-12">
+              <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.2s">
+                <div class="{{ 'icon color-'.rand( 1 , 6 ) }}">
+                  <i class="{{ $card->nos_logo }}"></i>
+                </div>
+                <h4>{{ $card->nos_titulo }}</h4>
+                <p>{{ $card->nos_descripcion }}</p>
+              </div>
+            </div>
+
+            @endforeach
+            
+          </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+@endsection
+
 @section('nosotros')
 	<!-- Features Section Start -->
     <section id="features" class="section">

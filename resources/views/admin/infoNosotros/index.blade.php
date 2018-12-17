@@ -15,8 +15,8 @@
 						<thead>
 							<tr>
 								<th width="10px">ID</th>
-								<th>Titulo</th>
 								<th>Logo</th>
+								<th>Titulo</th>
 								<th>descripcion</th>
 								<th colspan="3">&nbsp;</th>
 							</tr>
@@ -28,6 +28,12 @@
 								<td>{{ $card->nos_logo }}</td>
 								<td>{{ $card->nos_titulo }}</td>
 								<td>{{ $card->nos_descripcion }}</td>
+								<td width="10px">
+									<a href="{{ route('nosotros.show', $card->id) }}" class="btn btn-sm btn-secondary">Ver</a>
+								</td>
+								<td width="10px">
+									<a href="{{ route('nosotros.edit', $card->id) }}" class="btn btn-sm btn-warning">Editar</a>
+								</td>
 								<td width="10px">
 									<form action="{{ route('nosotros.destroy', $card->id) }}" method="POST">
 										<input type="hidden" name="_method" value="DELETE">

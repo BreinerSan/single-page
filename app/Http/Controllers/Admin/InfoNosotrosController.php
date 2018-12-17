@@ -34,7 +34,7 @@ class InfoNosotrosController extends Controller
     public function create()
     {
         $card = new InfoNosotros();
-        return view('admin.categories.create', ['card'=> $card]);
+        return view('admin.InfoNosotros.create', ['card'=> $card]);
     }
 
     /**
@@ -45,6 +45,10 @@ class InfoNosotrosController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'nos_descripcion' => 'required'
+        ]);
+
         $card = new InfoNosotros();
 
         $card->nos_logo = $request->nos_logo;
@@ -52,7 +56,7 @@ class InfoNosotrosController extends Controller
         $card->nos_descripcion = $request->nos_descripcion;
         $card->save();
 
-        return redirect()->route('nosotros.index', $category->id)
+        return redirect()->route('nosotros.index')
             ->with('info', 'Card creada con éxito');
     }
 
@@ -66,7 +70,7 @@ class InfoNosotrosController extends Controller
     {
         $card = InfoNosotros::find($id);
 
-        return view('admin.nosotros.show', ['card'=> $card]);
+        return view('admin.InfoNosotros.show', ['card'=> $card]);
     }
 
     /**
@@ -79,7 +83,7 @@ class InfoNosotrosController extends Controller
     {
         $card = InfoNosotros::find($id);
 
-        return view('admin.nosotros.edit', ['card'=> $card]);
+        return view('admin.InfoNosotros.edit', ['card'=> $card]);
     }
 
     /**
@@ -91,7 +95,19 @@ class InfoNosotrosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = Category::find($id);
+        $this->validate($request, [
+            'nos_descripcion' => 'required'
+        ]);
+        
+        $card = InfoNosotros::find($id);
+
+        $card->nos_logo = $request->nos_logo;
+        $card->nos_titulo = $request->nos_titulo;
+        $card->nos_descripcion = $request->nos_descripcion;
+        $card->save();
+
+        return redirect()->route('nosotros.edit', $card->id)
+            ->with('info', 'Card actualizada con éxito');
 
     }
 
@@ -103,6 +119,8 @@ class InfoNosotrosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $card = InfoNosotros::find($id)->delete();
+
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

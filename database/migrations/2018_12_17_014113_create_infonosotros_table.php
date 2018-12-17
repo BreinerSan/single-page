@@ -18,7 +18,7 @@ class CreateInfonosotrosTable extends Migration
 
             $table->string('nos_logo')->nullable();
             $table->string('nos_titulo')->nullable();
-            $table->text('nos_decripcion');
+            $table->text('nos_descripcion');
 
             $table->timestamps();
         });
