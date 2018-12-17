@@ -24,3 +24,5 @@ Route::get('/admin', 'HomeController@index')->name('home');
 //Admin
 
 Route::resource('admin/galeria', 'admin\ImagesController');
+Route::resource('admin/info', 'admin\WebinfoController');
+Route::resource('admin/nosotros', 'admin\InfoNosotrosController');

@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Image;
+use App\InfoNosotros;
 
-class ImagesController extends Controller
+class InfoNosotrosController extends Controller
 {
     public function __construnct(){
         $this->middleware('auth');
@@ -20,9 +20,10 @@ class ImagesController extends Controller
      */
     public function index()
     {
-        $images = Image::where('ima_estado', 'ACTIVO')->get();
+        $cards = InfoNosotros::orderBy('id', 'DESC')->paginate();
 
-        return view('admin.galeria.index', ['images'=> $images]);
+        return view('admin.InfoNosotros.index', ['cards'=> $cards]);
+        
     }
 
     /**
@@ -32,7 +33,8 @@ class ImagesController extends Controller
      */
     public function create()
     {
-        return view('admin.galeria.create');
+        $card = new InfoNosotros();
+        return view('admin.categories.create', ['card'=> $card]);
     }
 
     /**
@@ -43,25 +45,15 @@ class ImagesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'imagen' => 'required'
-        ]);
-        
-        //Imagen
-        if($request->hasFile('imagen')){
+        $card = new InfoNosotros();
 
-            $file = $request->file('imagen')->getClientOriginalExtension();
-            $file = 'galeria_'.time().'.'.$file;
-            $upload= $request->file('imagen')->move(public_path().'/img/galeria/', $file);
-            
-            $uploadImagen = new Image();
-            $uploadImagen->ima_name = $file;
-            $uploadImagen->save();
+        $card->nos_logo = $request->nos_logo;
+        $card->nos_titulo = $request->nos_titulo;
+        $card->nos_descripcion = $request->nos_descripcion;
+        $card->save();
 
-        }
-
-        return redirect()->route('galeria.index')
-            ->with('info', 'La imagen ha sido agregada con éxito');
+        return redirect()->route('nosotros.index', $category->id)
+            ->with('info', 'Card creada con éxito');
     }
 
     /**
@@ -72,7 +64,9 @@ class ImagesController extends Controller
      */
     public function show($id)
     {
-        //
+        $card = InfoNosotros::find($id);
+
+        return view('admin.nosotros.show', ['card'=> $card]);
     }
 
     /**
@@ -83,7 +77,9 @@ class ImagesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $card = InfoNosotros::find($id);
+
+        return view('admin.nosotros.edit', ['card'=> $card]);
     }
 
     /**
@@ -95,7 +91,8 @@ class ImagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+
     }
 
     /**
@@ -106,16 +103,6 @@ class ImagesController extends Controller
      */
     public function destroy($id)
     {
-        $imagen = Image::findOrFail($id);
-
-        if(\File::exists(public_path('img/galeria/'.$imagen->ima_url))){
-            \File::delete(public_path('img/galeria/'.$imagen->ima_url));
-        }
-
-        $imagen->ima_estado = 'INACTIVO';
-        $imagen->ima_name = 'default.jpg';
-        $imagen->save();        
-        
-        return back()->with('info', 'Eliminado correctamente');
+        //
     }
 }

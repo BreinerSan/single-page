@@ -1,33 +1,35 @@
 @extends('layouts.admin')
 
-@section('titulo', 'Gestiona de la imagenes de la galeria de la pagina web')
+@section('titulo', 'Gestiona la informacion de la pagina en cards en la vista de Sobre Nosotros')
 
 @section('contenido')
 	<div class="row">
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					Lista de Imagenes
-					<a href="{{ route('galeria.create') }}" class="btn btn-primary float-right">Crear</a>
+					Lista 
+					<a href="{{ route('nosotros.create') }}" class="btn btn-primary float-right">Crear</a>
 				</div>
 				<div class="card-body">
 					<table class="table table-striped table-hover">
 						<thead>
 							<tr>
 								<th width="10px">ID</th>
-								<th>Nombre</th>
-								<th>Imagen</th>
+								<th>Titulo</th>
+								<th>Logo</th>
+								<th>descripcion</th>
 								<th colspan="3">&nbsp;</th>
 							</tr>
 						</thead>
 						<tbody>
-							@foreach($images as $image)
+							@foreach($cards as $card)
 							<tr>
-								<td>{{ $image->id }}</td>
-								<td>{{ $image->ima_name }}</td>
-								<td><img src="{{asset('img/galeria/'.$image->ima_name)}}" alt="galeria" width="100px" height="50"></td>
+								<td>{{ $card->id }}</td>
+								<td>{{ $card->nos_logo }}</td>
+								<td>{{ $card->nos_titulo }}</td>
+								<td>{{ $card->nos_descripcion }}</td>
 								<td width="10px">
-									<form action="{{ route('galeria.destroy', $image->id) }}" method="POST">
+									<form action="{{ route('nosotros.destroy', $card->id) }}" method="POST">
 										<input type="hidden" name="_method" value="DELETE">
 										@csrf
 										<button class="btn btn-sm btn-danger">Eliminar</button>

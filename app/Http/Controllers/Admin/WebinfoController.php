@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Image;
+use App\Webinfo;
 
-class ImagesController extends Controller
+class WebinfoController extends Controller
 {
     public function __construnct(){
         $this->middleware('auth');
@@ -20,9 +20,8 @@ class ImagesController extends Controller
      */
     public function index()
     {
-        $images = Image::where('ima_estado', 'ACTIVO')->get();
-
-        return view('admin.galeria.index', ['images'=> $images]);
+        $info = Webinfo::first();
+        return view('admin.webinfo.index', ['info'=> $info]);
     }
 
     /**
@@ -32,7 +31,7 @@ class ImagesController extends Controller
      */
     public function create()
     {
-        return view('admin.galeria.create');
+        //
     }
 
     /**
@@ -43,25 +42,7 @@ class ImagesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'imagen' => 'required'
-        ]);
-        
-        //Imagen
-        if($request->hasFile('imagen')){
-
-            $file = $request->file('imagen')->getClientOriginalExtension();
-            $file = 'galeria_'.time().'.'.$file;
-            $upload= $request->file('imagen')->move(public_path().'/img/galeria/', $file);
-            
-            $uploadImagen = new Image();
-            $uploadImagen->ima_name = $file;
-            $uploadImagen->save();
-
-        }
-
-        return redirect()->route('galeria.index')
-            ->with('info', 'La imagen ha sido agregada con éxito');
+        //
     }
 
     /**
@@ -95,7 +76,29 @@ class ImagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'titulo' => 'required'
+        ]);
+        $webinfo = Webinfo::find($id);
+
+        $webinfo->web_titulo = $request->titulo;
+        $webinfo->web_subtitulo = $request->subtitulo;
+        $webinfo->web_subti_dos = $request->subtitulo_2;
+        $webinfo->web_direccion = $request->direccion;
+        $webinfo->web_correo = $request->correo;
+        $webinfo->web_telefono = $request->telefono;
+        $webinfo->web_mision = $request->mision;
+        $webinfo->web_vision = $request->vision;
+        $webinfo->web_facebook = $request->facebook;
+        $webinfo->web_twiter = $request->twitter;
+        $webinfo->web_instagram = $request->instagram;
+        $webinfo->web_google = $request->google;
+        
+
+        $webinfo->save();
+
+        return redirect()->route('info.index')
+            ->with('info', 'Se han cambiado los datos con éxito');
     }
 
     /**
@@ -106,16 +109,6 @@ class ImagesController extends Controller
      */
     public function destroy($id)
     {
-        $imagen = Image::findOrFail($id);
-
-        if(\File::exists(public_path('img/galeria/'.$imagen->ima_url))){
-            \File::delete(public_path('img/galeria/'.$imagen->ima_url));
-        }
-
-        $imagen->ima_estado = 'INACTIVO';
-        $imagen->ima_name = 'default.jpg';
-        $imagen->save();        
-        
-        return back()->with('info', 'Eliminado correctamente');
+        //
     }
 }
