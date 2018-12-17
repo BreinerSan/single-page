@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('titulo', 'Subir Imagenes a la galeria')
+@section('titulo', 'Subir Imágenes a la galería')
 
 @section('contenido')
 	<div class="row">

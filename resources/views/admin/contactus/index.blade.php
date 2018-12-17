@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
-@section('titulo', 'Gestiona la informacion de la pagina en cards en la vista de Sobre Nosotros')
+@section('titulo', 'Revisa todos los mensajes que han llegado')
 
 @section('contenido')
 	<div class="row">
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					Buzon de mensajes 
+					Buzón de mensajes 
 				</div>
 				<div class="card-body">
 					<table class="table table-striped table-hover">

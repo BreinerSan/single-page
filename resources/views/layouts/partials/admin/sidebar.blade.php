@@ -16,19 +16,19 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{{ url('admin/galeria') }}">
 					<span data-feather="image"></span>
-					Gestion de Galeria
+					Gestión de Galería
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="{{ url('admin/nosotros') }}">
 					<span data-feather="bookmark"></span>
-					Gestion datos Nosotros
+					Gestión datos Nosotros
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="{{ url('admin/mensajes') }}">
 					<span data-feather="inbox"></span>
-					Buzon de mensajes
+					Buzón de mensajes
 				</a>
 			</li>
 			

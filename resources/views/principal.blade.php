@@ -100,8 +100,8 @@
     <section id="features" class="section">
       <div class="container">
         <div class="section-header">          
-          <h2 class="section-title">MISION Y VISION</h2>
-          <span>MISION Y VISION</span>
+          <h2 class="section-title">MISIÓN Y VISIÓN</h2>
+          <span>MISIÓN Y VISIÓN</span>
           <p class="section-subtitle"></p>
         </div>
         <div class="row">
@@ -113,7 +113,7 @@
               </div>
               <div class="featured-content">
                 <div class="icon-o"><i class="lni-layout"></i></div>
-                <h4>MISION</h4>
+                <h4>MISIÓN</h4>
                 <p>{{ $info->web_mision }}</p>
               </div>
             </div>
@@ -127,7 +127,7 @@
               </div>
               <div class="featured-content">
                 <div class="icon-o"><i class="lni-tab"></i></div>
-                <h4>VISION</h4>
+                <h4>VISIÓN</h4>
                 <p>{{ $info->web_vision }}</p>
               </div>
             </div>
@@ -146,8 +146,8 @@
         <div class="contact-form">
           <div class="container">
             <div class="section-header">          
-              <h2 class="section-title">Contactanos</h2>
-              <span>Contactanos</span>
+              <h2 class="section-title">Contáctanos</h2>
+              <span>Contáctanos</span>
               <p class="section-subtitle"></p>
             </div>
             <div class="row">          
@@ -158,25 +158,25 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Por favor escribe tu nombre">
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required data-error="Por favor escribe tu nombre">
                           <div class="help-block with-errors"></div>
                         </div>                                 
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <input type="email" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Por favor escribe tu correo electronico">
+                          <input type="email" placeholder="Correo Electrónico" id="email" class="form-control" name="email" required data-error="Por favor escribe tu correo electronico">
                           <div class="help-block with-errors"></div>
                         </div> 
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <input type="text" placeholder="Subject" id="msg_subject" name="subject" class="form-control" required data-error="Por favor escribe el asunto">
+                          <input type="text" placeholder="Asunto" id="msg_subject" name="subject" class="form-control" required data-error="Por favor escribe el asunto">
                           <div class="help-block with-errors"></div>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group"> 
-                          <textarea class="form-control" id="message" name="message" placeholder="Your Message" rows="7" data-error="Escribe tu mensaje" required></textarea>
+                          <textarea class="form-control" id="message" name="message" placeholder="Mensaje" rows="7" data-error="Escribe tu mensaje" required></textarea>
                           <div class="help-block with-errors"></div>
                         </div>
                         <div class="submit-button">
@@ -195,7 +195,7 @@
                   <div class="contact-info_area">
                     <div class="contact-info">
                       <i class="lni-map"></i>
-                      <h5>Direccion</h5>
+                      <h5>Dirección</h5>
                       <p>{{ $info->web_direccion }}</p>
                     </div>
                     <!-- Content Info -->
@@ -207,7 +207,7 @@
                     <!-- Content Info -->
                     <div class="contact-info">
                       <i class="lni-phone"></i>
-                      <h5>Telefono</h5>
+                      <h5>Teléfono</h5>
                       <p>{{ $info->web_telefono }}</p>
                     </div>
                     <!-- Icon -->

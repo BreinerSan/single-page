@@ -42,10 +42,10 @@
 	                <a class="nav-link page-scroll" href="#services">Nosotros</a>
 	              </li> 
 	              <li class="nav-item">
-	                <a class="nav-link page-scroll" href="#features">Mision y Vision</a>
+	                <a class="nav-link page-scroll" href="#features">Misión y Visión</a>
 	              </li>                                      
 	              <li class="nav-item">
-	                <a class="nav-link page-scroll" href="#contact">Contactanos</a>
+	                <a class="nav-link page-scroll" href="#contact">Contáctanos</a>
 	              </li> 
 	            </ul>              
 	          </div>
@@ -90,20 +90,20 @@
 	                  <li><a href="#slider-area">Inicio</a></li>
 		              <li><a href="#portfolios">Trabajos</a></li>   
 		              <li><a href="#services">Nosotros</a></li> 
-		              <li><a href="#features">Mision y Vision</a></li>                                      
-		              <li><a href="#contact">Contactanos</a></li> 
+		              <li><a href="#features">Misión y Visión</a></li>                                      
+		              <li><a href="#contact">Contáctanos</a></li> 
 	                </ul>
 	              </div>
 	            </div>
 	            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
 	              <div class="widget">
-	                <h3 class="block-title">Contactanos</h3>
+	                <h3 class="block-title">Contáctanos</h3>
 	                <ul class="contact-footer">
 	                  <li>
-	                    <strong>Direccion :</strong> <span>{{ $info->web_direccion }}</span>
+	                    <strong>Dirección :</strong> <span>{{ $info->web_direccion }}</span>
 	                  </li>
 	                  <li>
-	                    <strong>Telefono :</strong> <span>{{ $info->web_telefono }}</span>
+	                    <strong>Teléfono :</strong> <span>{{ $info->web_telefono }}</span>
 	                  </li>
 	                  <li>
 	                    <strong>Correo :</strong> <span><a href="#">{{ $info->web_correo }}</a></span>

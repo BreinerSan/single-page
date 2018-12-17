@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
-@section('titulo', 'Gestiona de la imagenes de la galeria de la pagina web')
+@section('titulo', 'Gestiona de las imágenes de la galería de la página web')
 
 @section('contenido')
 	<div class="row">
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					Lista de Imagenes
+					Lista de Imágenes
 					<a href="{{ route('galeria.create') }}" class="btn btn-primary float-right">Crear</a>
 				</div>
 				<div class="card-body">

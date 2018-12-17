@@ -7,7 +7,7 @@
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					Formulario de registro
+					Formulario de edicion
 				</div>
 				<div class="card-body">
 					<form action="{{ route('nosotros.update', $card->id) }}" method="POST">

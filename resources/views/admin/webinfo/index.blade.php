@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('titulo', 'Gestiona los datos Generales de la pagina web')
+@section('titulo', 'Gestiona los datos Generales de la página web')
 
 @section('contenido')
 	<div class="row">
@@ -29,15 +29,15 @@
 						</div>
 						<div class="row">
 							<div class="form-group col-md-12">
-						    	<label for="direccion">Direccion</label>
+						    	<label for="direccion">Dirección</label>
 						      <input type="text" name="direccion" class="form-control" placeholder="Opcional" value="{{ $info->web_direccion }}">
 						    </div>
 						    <div class="form-group col-md-6">
-						    	<label for="telefono">Telefono</label>
+						    	<label for="telefono">Teléfono</label>
 						      <input type="text" name="telefono" class="form-control" placeholder="Opcional" value="{{ $info->web_telefono }}">
 						    </div>
 						    <div class="form-group col-md-6">
-						    	<label for="correo">Correo Electronico</label>
+						    	<label for="correo">Correo electrónico</label>
 						      <input type="text" name="correo" class="form-control" placeholder="Opcional" value="{{ $info->web_correo }}">
 						    </div>
 						</div>

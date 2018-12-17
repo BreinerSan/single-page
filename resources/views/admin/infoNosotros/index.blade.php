@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('titulo', 'Gestiona la informacion de la pagina en cards en la vista de Sobre Nosotros')
+@section('titulo', 'Gestiona la información de la página en cards en la vista de Sobre Nosotros')
 
 @section('contenido')
 	<div class="row">
@@ -17,7 +17,7 @@
 								<th width="10px">ID</th>
 								<th>Logo</th>
 								<th>Titulo</th>
-								<th>descripcion</th>
+								<th>descripción</th>
 								<th colspan="3">&nbsp;</th>
 							</tr>
 						</thead>
